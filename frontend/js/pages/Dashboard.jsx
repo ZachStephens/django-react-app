@@ -1,13 +1,17 @@
 
+import React from "react";
+import BasicPage from './templates/BasicPage'
 
-import React, { useState } from 'react';
 
-const Dashboard = (props) => {
-    return (
-        <div>
-            <h2>Dashboard</h2>
-        </div>
-    );
+
+
+class Dashboard extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return <BasicPage name='Dashboard'></BasicPage>
+    }
 }
-
 export default Dashboard;

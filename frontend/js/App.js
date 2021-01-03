@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-// import { Router } from 'react-router-dom';
 
 import {
   BrowserRouter as Router,
@@ -14,25 +13,33 @@ import {
 import Home from './pages/Home';
 import About from './pages/About'
 import Dashboard from './pages/Dashboard'
+import JudesFavorite from './pages/JudesFavorite'
 import MenuBar from './components/menubar'
 import SentryBoundary from './utils/SentryBoundary';
+import { size } from 'lodash';
+import BasicPage from './pages/templates/BasicPage';
+import CircleGame from './pages/CircleGame';
 
 const App = () => (
+
+
   <>
     <SentryBoundary>
       <Router>
         <div>
-          <MenuBar />
-          <hr />
+          <div>
+          {/* <hr /> */}
           <Switch>
-            {/* <Route exact path="/">
-              <Redirect to="/home" />
-            </Route> */}
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/dashboard" component={Dashboard} />
+            <Route exact path="/" component={() => <Home/> } />
+            <Route exact path="/home" component={() => <Home/> } />
+            <Route path="/about" component={() => <BasicPage name={"About"} /> }/>
+            <Route path="/dashboard" component={ () => <Dashboard/> } />
+            <Route path="/CircleGame" component={() => <CircleGame /> } />
+            <Route path="/JudesFavorite" component={() => <JudesFavorite/> } />
           </Switch>
+          </div>
+
+
         </div>
       </Router>
     </SentryBoundary>

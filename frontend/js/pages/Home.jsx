@@ -1,29 +1,16 @@
-import React, { useState } from 'react';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React from "react";
+import BasicPage from './templates/BasicPage'
 
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-const Home = () => {
-  return (
-    <>
-      <h1>This is Home Page</h1>
-    </>
-  );
-};
-
-
-// function About() {
-//   return (
-//     <div>
-//       <h2>About</h2>
-//     </div>
-//   );
-// }
-
-
+  render() {
+    return (
+      <BasicPage name='Home'></BasicPage>
+    );
+  }
+}
 export default Home;
